@@ -11,6 +11,7 @@ const db = mongoose.connection;
 
 app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json())
+app.use(cors({origin: 'http://localhost:4200'}));
 
 db.on('connected', () => {
     console.log('db connected')
